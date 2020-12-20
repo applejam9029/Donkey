@@ -1,14 +1,14 @@
 const en = {
   translation: {
     description:
-      'The perfect app for taking temporary notes, arranging ideas, shouting "The King has donkey ears!", and so on.',
+      'The perfect app for things like taking temporary notes, arranging ideas, shouting "The King has donkey ears!".',
     LangSwitchLabel: "Language",
     "Write-label": "Write your Shout",
     "Write-placeholder": "The King has donkey ears!",
     "Shout-button": "Shout!",
     "About-header": "About",
     "About-text":
-      'Donkey is a note-taker inspired by microblogging. It allows you to write Shouts. But Donkey never saves your Shouts. Instead, all Shout data vanishes when you leave this page. This is the perfect app for taking temporary notes, arranging ideas, shouting "The King has donkey ears!", and so on.',
+      'Donkey is a note-taker inspired by microblogging. It allows you to write Shouts. But Donkey never saves your Shouts. Instead, all Shout data vanishes when you leave this page. This is the perfect app for things like taking temporary notes, arranging ideas, shouting "The King has donkey ears!".',
     "About-made_for-beforelink": "Donkey was made for ",
     "About-made_for-afterlink": ".",
     "Privacy-header": "Privacy",

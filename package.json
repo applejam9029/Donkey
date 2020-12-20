@@ -1,7 +1,7 @@
 {
   "name": "donkey",
   "private": true,
-  "description": "The perfect app for taking temporary notes, arranging ideas, shouting \"The King has donkey ears!\", and so on.",
+  "description": "The perfect app for things like taking temporary notes, arranging ideas, shouting \"The King has donkey ears!\".",
   "version": "1.0.0",
   "author": "applejam <46771211+applejam9029@users.noreply.github.com>",
   "dependencies": {
