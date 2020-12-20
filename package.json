@@ -1,0 +1,47 @@
+{
+  "name": "donkey",
+  "private": true,
+  "description": "The most suitable memo app for shout \"The King has donkey ears.\" things!",
+  "version": "0.1.0",
+  "author": "applejam <46771211+applejam9029@users.noreply.github.com>",
+  "dependencies": {
+    "@headlessui/react": "^0.2.0",
+    "gatsby": "^2.29.1",
+    "gatsby-image": "^2.8.0",
+    "gatsby-plugin-i18n": "^1.0.1",
+    "gatsby-plugin-manifest": "^2.9.0",
+    "gatsby-plugin-offline": "^3.7.0",
+    "gatsby-plugin-react-helmet": "^3.7.0",
+    "i18next": "^19.8.4",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "react-helmet": "^6.1.0",
+    "surge": "^0.21.7",
+    "tailwindcss": "^2.0.2",
+    "typescript": "^4.1.3"
+  },
+  "devDependencies": {
+    "@types/react-dom": "^17.0.0",
+    "@types/react-helmet": "^6.1.0",
+    "autoprefixer": "^10.1.0",
+    "gatsby-plugin-postcss": "^3.4.0",
+    "gatsby-plugin-sharp": "^2.11.1",
+    "gatsby-plugin-typegen": "^2.2.2",
+    "gatsby-plugin-typescript": "^2.9.0",
+    "gatsby-source-filesystem": "^2.8.0",
+    "gatsby-transformer-sharp": "^2.9.0",
+    "postcss": "^8.2.1",
+    "prettier": "^2.2.1",
+    "ts-node": "^9.1.1"
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "deploy": "npm run clean && npm run build && surge --domain donkey-app.surge.sh ./public",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  }
+}

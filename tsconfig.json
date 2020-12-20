@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "target": "esnext",
+    "module": "esnext",
+    "lib": ["dom", "es2017"],
+    "baseUrl": "./",
+    "moduleResolution": "node"
+  }
+}
