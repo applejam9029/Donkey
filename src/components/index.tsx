@@ -42,18 +42,37 @@ const IndexComponent: React.FC<{
   donkeyImage: GatsbyTypes.DonkeyImageQuery
   pageDisplayedTime: number
 }> = ({ lang, donkeyImage, pageDisplayedTime }) => {
+  const [_, setIsFirstTimeShouted] = useState(false)
+
+  return (
+    <Layout lang={lang}>
+      <SEO />
+      <WriteAndRead
+        donkeyImage={donkeyImage}
+        pageDisplayedTime={pageDisplayedTime}
+        setIsFirstTimeShouted={setIsFirstTimeShouted}
+      />
+    </Layout>
+  )
+}
+
+const WriteAndRead: React.FC<{
+  donkeyImage: GatsbyTypes.DonkeyImageQuery
+  pageDisplayedTime: number
+  setIsFirstTimeShouted: React.Dispatch<React.SetStateAction<boolean>>
+}> = ({ donkeyImage, pageDisplayedTime, setIsFirstTimeShouted }) => {
   const [entries, setEntries] = useState(shoutManager.get())
   const [size, setSize] = useState(shoutManager.getSize())
 
   const iconImage = donkeyImage.allFile.edges?.[0].node.childImageSharp
 
   return (
-    <Layout lang={lang}>
-      <SEO />
+    <>
       <ShoutWrite
         setEntries={setEntries}
         setSize={setSize}
         iconImage={iconImage}
+        setIsFirstTimeShouted={setIsFirstTimeShouted}
       />
       <div
         className={`max-w-md mx-2 ${
@@ -77,7 +96,7 @@ const IndexComponent: React.FC<{
           }
         })}
       </div>
-    </Layout>
+    </>
   )
 }
 

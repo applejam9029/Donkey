@@ -12,7 +12,8 @@ export const ShoutWrite: React.FC<{
     React.SetStateAction<ReturnType<typeof shoutManager["getSize"]>>
   >
   iconImage: GatsbyTypes.DonkeyImageQuery["allFile"]["edges"][0]["node"]["childImageSharp"]
-}> = ({ setEntries, setSize, iconImage }) => {
+  setIsFirstTimeShouted: React.Dispatch<React.SetStateAction<boolean>>
+}> = ({ setEntries, setSize, iconImage, setIsFirstTimeShouted }) => {
   const [text, setText] = useState("")
 
   const setShout = (text: string) => {
@@ -20,6 +21,7 @@ export const ShoutWrite: React.FC<{
     setEntries(shoutManager.get())
     setSize(shoutManager.getSize())
     setText("")
+    setIsFirstTimeShouted(shoutManager.getSize() > 0)
   }
 
   return (
