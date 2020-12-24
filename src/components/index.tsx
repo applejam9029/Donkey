@@ -61,16 +61,16 @@ const WriteAndRead: React.FC<{
   pageDisplayedTime: number
   setIsFirstTimeShouted: React.Dispatch<React.SetStateAction<boolean>>
 }> = ({ donkeyImage, pageDisplayedTime, setIsFirstTimeShouted }) => {
-  const [entries, setEntries] = useState(shoutManager.get())
-  const [size, setSize] = useState(shoutManager.getSize())
+  const entries = shoutManager.get()
+  const size = shoutManager.getSize()
+  const [_, setLastUpdateCount] = useState(0)
 
   const iconImage = donkeyImage.allFile.edges?.[0].node.childImageSharp
 
   return (
     <>
       <ShoutWrite
-        setEntries={setEntries}
-        setSize={setSize}
+        setLastUpdateCount={setLastUpdateCount}
         iconImage={iconImage}
         setIsFirstTimeShouted={setIsFirstTimeShouted}
       />

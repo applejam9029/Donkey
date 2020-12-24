@@ -5,23 +5,17 @@ import i18n from "i18next"
 import { shoutManager } from "../model/shout_manager"
 
 export const ShoutWrite: React.FC<{
-  setEntries: React.Dispatch<
-    React.SetStateAction<ReturnType<typeof shoutManager["get"]>>
-  >
-  setSize: React.Dispatch<
-    React.SetStateAction<ReturnType<typeof shoutManager["getSize"]>>
-  >
+  setLastUpdateCount: React.Dispatch<React.SetStateAction<number>>
   iconImage: GatsbyTypes.DonkeyImageQuery["allFile"]["edges"][0]["node"]["childImageSharp"]
   setIsFirstTimeShouted: React.Dispatch<React.SetStateAction<boolean>>
-}> = ({ setEntries, setSize, iconImage, setIsFirstTimeShouted }) => {
+}> = ({ setLastUpdateCount, iconImage, setIsFirstTimeShouted }) => {
   const [text, setText] = useState("")
 
   const setShout = (text: string) => {
     shoutManager.set(text)
-    setEntries(shoutManager.get())
-    setSize(shoutManager.getSize())
-    setText("")
+    setLastUpdateCount(shoutManager.getSize())
     setIsFirstTimeShouted(shoutManager.getSize() > 0)
+    setText("")
   }
 
   return (
