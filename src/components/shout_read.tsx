@@ -18,7 +18,7 @@ export const ShoutRead: React.FC<
 
   return (
     <div
-      className={`py-2 grid grid-cols-8 sm:grid-cols-8 gap-2 transition-transform transform ${aniamtionTarget}`}
+      className={`pt-2 pb-4 grid grid-cols-8 sm:grid-cols-8 gap-2 transform transition-transform ${aniamtionTarget}`}
     >
       {iconImage?.fluid && (
         <div className="col-end-2">
