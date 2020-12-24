@@ -24,7 +24,7 @@ export const Layout: React.FC<{ lang: string; isIndex?: boolean }> = ({
   i18n.changeLanguage(lang)
 
   return (
-    <div className="text-gray-1000 bg-gray-0 min-h-full flex flex-col divide-y dark:divide-gray-500">
+    <div className="text-gray-1000 min-h-full flex flex-col divide-y dark:divide-gray-500">
       <header className="p-2 bg-gray-800 dark:bg-gray-900 shadow flex-grow-0">
         <Header lang={lang} isIndex={!!isIndex} />
       </header>
