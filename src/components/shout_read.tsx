@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import Img from "gatsby-image"
 
 import { Shout } from "../model/shout_manager"
+
+import { useTransition } from "../hooks/transition"
 
 export const ShoutRead: React.FC<
   Shout & {
@@ -9,15 +11,10 @@ export const ShoutRead: React.FC<
     animate: boolean
   }
 > = ({ text, timestamp, iconImage, animate }) => {
-  const [aniamtionTarget, setAnimationTarget] = useState(
-    animate ? "scale-y-0" : "scale-y-100"
-  )
-
-  useEffect(() => {
-    if (animate) {
-      setTimeout(setAnimationTarget.bind(null, "scale-y-100"), 10)
-    }
-  }, [])
+  const aniamtionTarget = useTransition({
+    enterFrom: animate ? "scale-y-0" : "scale-y-100",
+    enterTo: "scale-y-100",
+  })
 
   return (
     <div
