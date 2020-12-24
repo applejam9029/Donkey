@@ -10,7 +10,7 @@ export const useTransition = ({
   const [aniamtionTarget, setAnimationTarget] = useState(enterFrom)
 
   useEffect(() => {
-    setTimeout(setAnimationTarget.bind(null, enterTo), 1)
+    setTimeout(setAnimationTarget.bind(null, enterTo), 50)
   }, [])
 
   return aniamtionTarget
