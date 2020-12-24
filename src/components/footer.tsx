@@ -9,7 +9,7 @@ import AboutAndPrivacy from "./description"
 export const Footer: React.FC = () => {
   if (shoutManager.getSize() > 0) {
     return (
-      <div className="max-w-md mx-2 sm:mx-auto py-6 flex divide-x dark:divide-gray-500">
+      <div className="max-w-md mx-2 sm:mx-auto py-6 flex divide-x divide-gray-500">
         <Link
           className="text-secondary-400 pr-2"
           to={`/${i18n.language}/about`}
