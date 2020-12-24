@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Img from "gatsby-image"
 
 import { Shout } from "../model/shout_manager"
@@ -6,10 +6,23 @@ import { Shout } from "../model/shout_manager"
 export const ShoutRead: React.FC<
   Shout & {
     iconImage: GatsbyTypes.DonkeyImageQuery["allFile"]["edges"][0]["node"]["childImageSharp"]
+    animate: boolean
   }
-> = ({ text, timestamp, iconImage }) => {
+> = ({ text, timestamp, iconImage, animate }) => {
+  const [aniamtionTarget, setAnimationTarget] = useState(
+    animate ? "scale-y-0" : "scale-y-100"
+  )
+
+  useEffect(() => {
+    if (animate) {
+      setTimeout(setAnimationTarget.bind(null, "scale-y-100"), 10)
+    }
+  }, [])
+
   return (
-    <div className="py-2 grid grid-cols-8 sm:grid-cols-8 gap-2">
+    <div
+      className={`py-2 grid grid-cols-8 sm:grid-cols-8 gap-2 transition-transform transform ${aniamtionTarget}`}
+    >
       {iconImage?.fluid && (
         <div className="col-end-2">
           <Img fluid={iconImage.fluid} />
